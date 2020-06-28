@@ -11,7 +11,12 @@ const FormSchema = yup.object({
   email: yup
     .string()
     .email("Invalid email!")
-    .required("The email field is required!"),
+    .required("The email field is required!")
+    .test(
+      "Unique",
+      "The email needs to be unique!",
+      (emails) => new Set(emails).size === emails.length
+    ),
   password: yup
     .string()
     .required("The password field is required!")
