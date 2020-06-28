@@ -14,6 +14,7 @@ import { createLogger } from "redux-logger";
 import { PersistGate } from "redux-persist/integration/react";
 import * as firebase from "firebase";
 import RegisterForm from "./screens/RegisterForm";
+import React from 'react';
 
 var firebaseConfig = {
   apiKey: "AIzaSyAv49P7QArAi4yFT4Ir0fswrz-g2v1oQRE",
