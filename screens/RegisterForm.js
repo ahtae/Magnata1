@@ -82,23 +82,6 @@ export default function RegisterForm({ navigation }) {
   );
 }
 
-// Login = (values, navigation) => {
-//   firebase
-//     .auth()
-//     .signInWithEmailAndPassword(values.email, values.password)
-//     .then(response => {
-//       let {user} = response;
-//       this.setState({user});
-//       alert('Registration success');
-//       setTimeout(() => {
-//         navigation.navigate('HomeScreen');
-//       }, 2000);
-//     })
-//     .catch(err => {
-//       alert(err);
-//     });
-// };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
