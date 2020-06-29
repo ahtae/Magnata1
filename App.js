@@ -13,21 +13,14 @@ import { persistStore, persistReducer } from "redux-persist";
 import { createLogger } from "redux-logger";
 import { PersistGate } from "redux-persist/integration/react";
 import * as firebase from "firebase";
+import 'firebase/firestore';
 import RegisterForm from "./screens/RegisterForm";
 import React from 'react';
+import firebaseConfig from './firebaseConfig';
 
-var firebaseConfig = {
-  apiKey: "AIzaSyAv49P7QArAi4yFT4Ir0fswrz-g2v1oQRE",
-  authDomain: "magnata-ba19a.firebaseapp.com",
-  databaseURL: "https://magnata-ba19a.firebaseio.com",
-  projectId: "magnata-ba19a",
-  storageBucket: "magnata-ba19a.appspot.com",
-  messagingSenderId: "660843609937",
-  appId: "1:660843609937:web:4e48e2cc9dce29b276dd70",
-  measurementId: "G-KFMDXNDWMW",
-};
-
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore(firebaseApp);
+export const ChallengesRef = db.collection('Users');
 
 const persistConfig = {
   key: "root",
